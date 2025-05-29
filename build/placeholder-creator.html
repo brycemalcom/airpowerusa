@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Air-Power USA Placeholder Images</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure body takes full height */
+        }
+        .placeholder {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+            transition: 1s opacity;
+        }
+        .tech {
+            background: linear-gradient(rgba(0,20,40,0.8), rgba(0,20,40,0.8)), 
+                        url('https://images.unsplash.com/photo-1565031491910-e57fac031c41?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+        .placeholder::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(74, 144, 226, 0.1), rgba(0, 184, 212, 0.2));
+            animation: rotate 20s linear infinite;
+            z-index: -200; /* Ensure this is behind the video */
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg) translateY(-50%) translateX(-50%); }
+            to { transform: rotate(360deg) translateY(-50%) translateX(-50%); }
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            max-width: 80%;
+        }
+        h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 32px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            line-height: 1.4;
+        }
+        .logo {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #003366, #4a90e2);
+            position: relative;
+            margin-right: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .button.outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Hero Image -->
+    <div class="placeholder hero">
+        <video autoplay loop muted class="hero-video">
+            <source src="videos/military-truck-hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            AIR-POWER USA
+        </div>
+        <div class="content">
+            <h1>Clean Power from Thin Air</h1>
+            <p>Zero-emission energy systems powered by compressed air and integrated storage.</p>
+            <div>
+                <a href="#" class="button">Request Investor Deck</a>
+                <a href="#" class="button outline">Join the Energy Revolution</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

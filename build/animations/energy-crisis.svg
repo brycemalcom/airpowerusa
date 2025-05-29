@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#FF4500" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .bg { fill: #080808; }
+    .building { fill: #1b1b1b; }
+    .smokestack { fill: #2a2a2a; }
+    .glow { fill: url(#glow); }
+    .pole { stroke: #444; stroke-width: 4; }
+    .wire { stroke: #444; stroke-width: 2; stroke-dasharray: 5 5; }
+    .smoke { fill: #555; opacity: 0.4; }
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 0.4; }
+      100% { transform: translateY(-120px); opacity: 0; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="800" height="400" />
+
+  <!-- Glow under buildings -->
+  <ellipse class="glow" cx="400" cy="380" rx="600" ry="80" />
+
+  <!-- Skyline buildings -->
+  <rect class="building" x="50" y="220" width="100" height="180" />
+  <rect class="building" x="180" y="180" width="120" height="220" />
+  <rect class="building" x="340" y="240" width="80" height="160" />
+  <rect class="building" x="450" y="200" width="140" height="200" />
+  <rect class="building" x="620" y="260" width="100" height="140" />
+
+  <!-- Smokestacks -->
+  <rect class="smokestack" x="200" y="140" width="20" height="260" />
+  <rect class="smokestack" x="460" y="160" width="24" height="240" />
+  <rect class="smokestack" x="500" y="120" width="16" height="280" />
+
+  <!-- Glow inside stacks -->
+  <ellipse class="glow" cx="210" cy="400" rx="30" ry="15" />
+  <ellipse class="glow" cx="472" cy="400" rx="35" ry="18" />
+
+  <!-- Power poles and broken wires -->
+  <line class="pole" x1="10" y1="300" x2="10" y2="400" />
+  <line class="pole" x1="90" y1="280" x2="90" y2="400" />
+  <line class="wire" x1="10" y1="300" x2="90" y2="280" />
+  <line class="pole" x1="730" y1="320" x2="730" y2="400" />
+  <line class="pole" x1="810" y1="300" x2="810" y2="400" />
+  <line class="wire" x1="730" y1="320" x2="810" y2="300" />
+
+  <!-- Animated smoke -->
+  <g class="smoke-group">
+    <circle class="smoke" cx="210" cy="140" r="12" style="animation: rise 4s infinite ease-in; animation-delay: 0s;" />
+    <circle class="smoke" cx="210" cy="140" r="10" style="animation: rise 4s infinite ease-in; animation-delay: 1s;" />
+    <circle class="smoke" cx="472" cy="160" r="14" style="animation: rise 3.5s infinite ease-in; animation-delay: 0.5s;" />
+    <circle class="smoke" cx="472" cy="160" r="11" style="animation: rise 3.5s infinite ease-in; animation-delay: 1.5s;" />
+    <circle class="smoke" cx="508" cy="120" r="9" style="animation: rise 5s infinite ease-in; animation-delay: 0.2s;" />
+    <circle class="smoke" cx="508" cy="120" r="7" style="animation: rise 5s infinite ease-in; animation-delay: 2s;" />
+  </g>
+</svg> 

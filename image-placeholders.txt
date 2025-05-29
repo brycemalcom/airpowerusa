@@ -1,0 +1,50 @@
+# Air-Power USA Website Image Placeholders
+
+This file contains a list of image placeholders needed for the website.
+Place these images in the 'public/images' directory with the specified filenames.
+
+## Image List
+
+hero-bg.jpg - Homepage hero background - showing generator in remote terrain
+about-hero.jpg - About page hero image
+how-it-works-hero.jpg - How It Works page hero image
+applications-hero.jpg - Applications page hero image
+products-hero.jpg - Products page hero image
+investors-hero.jpg - Investors page hero image
+contact-hero.jpg - Contact page hero image
+logo.png - Air-Power USA logo
+mission-image.jpg - Mission section image
+story-image.jpg - Our story section image
+team-damien.jpg - Team member - Damien photo
+team-peter.jpg - Team member - Peter photo
+team-open.jpg - Team member - Open position placeholder
+compressed-air-tanks.jpg - Compressed air tanks image
+air-engine.jpg - Compressed air engine image
+generator-system.jpg - Generator system image
+bess-storage.jpg - BESS storage system image
+closed-loop.jpg - Closed-loop system image
+cold-air-applications.jpg - Cold air applications image
+air-power-tech.jpg - Air-Power technology illustration
+pattern-bg.png - Background pattern
+tech-pattern.png - Technology pattern background
+energy-problem.jpg - Energy infrastructure problems image
+solution-diagram.jpg - Air-Power solution diagram
+air-truck-unit.jpg - 50kW Air Truck Unit product image
+bess-system.jpg - 1.5MW BESS System product image
+disaster-relief.jpg - Disaster relief application image
+off-grid-communities.jpg - Off-grid communities application image
+ev-charging.jpg - EV charging application image
+data-center.jpg - Data center application image
+agriculture.jpg - Agriculture application image
+military.jpg - Military application image
+microgrids.jpg - Microgrids application image
+marine.jpg - Marine vessels application image
+commercial-storage.jpg - Commercial energy storage application image
+
+## Image Specifications
+
+- Hero images: 1920x1080px (16:9 ratio)
+- Product images: 800x600px
+- Application images: 800x600px
+- Team photos: 500x500px (1:1 ratio)
+- Logo: 500x150px with transparent background

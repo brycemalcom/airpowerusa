@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Air-Power USA Logo Creator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: transparent;
+            font-family: Arial, sans-serif;
+        }
+        .logo-container {
+            width: 500px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #003366, #4a90e2);
+            position: relative;
+            margin-right: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        .logo-text {
+            font-size: 36px;
+            font-weight: bold;
+            color: #003366;
+        }
+        .logo-text span {
+            color: #4a90e2;
+        }
+        .tagline {
+            font-size: 14px;
+            color: #555;
+            position: absolute;
+            margin-top: 90px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo-icon"></div>
+        <div class="logo-text">AIR-<span>POWER</span><sub>USA</sub></div>
+        <div class="tagline">Clean Power from Thin Air</div>
+    </div>
+</body>
+</html> 
