@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -190,17 +190,41 @@ const ComparisonTable = styled(motion.div)`
 `;
 
 const FlowchartContainer = styled.div`
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto 3rem;
   display: flex;
   justify-content: center;
 `;
 
 const FlowchartImage = styled.img`
-  width: 100%;
+  width: 90%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+`;
+
+const ViewDetailedFlowLink = styled(motion.button)`
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: underline;
+  &:hover {
+    color: #4a90e2;
+  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const DetailedFlowImage = styled(motion.img)`
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
 `;
 
 const SolutionSection = () => {
@@ -208,21 +232,8 @@ const SolutionSection = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
-  
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-  
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-  
+  const [showDetailedFlow, setShowDetailedFlow] = useState(false);
+
   return (
     <SectionContainer>
       <SectionContent ref={ref}>
@@ -242,10 +253,27 @@ const SolutionSection = () => {
             A patented closed-loop system that converts compressed air into clean energy through an innovative process.
           </SectionDescription>
         </SectionHeader>
-        <FlowchartContainer>
-          <FlowchartImage src="/images/cae-flowchart.png" alt="Compressed Air Energy System Flowchart" />
-        </FlowchartContainer>
-        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <FlowchartContainer>
+            {showDetailedFlow ? (
+              <FlowchartImage src="/images/CAE_flowchart_final.png" alt="Detailed Compressed Air Energy System Flowchart" />
+            ) : (
+              <FlowchartImage src="/images/simple_flowchart.svg" alt="Compressed Air Energy System Flowchart" />
+            )}
+          </FlowchartContainer>
+          <ViewDetailedFlowLink
+            onClick={() => setShowDetailedFlow(!showDetailedFlow)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            Explore Detailed Process
+          </ViewDetailedFlowLink>
+        </motion.div>
         <ComparisonTable
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -299,4 +327,4 @@ const SolutionSection = () => {
   );
 };
 
-export default SolutionSection; 
+export default SolutionSection;

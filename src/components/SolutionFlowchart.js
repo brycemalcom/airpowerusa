@@ -111,7 +111,7 @@ const SolutionFlowchart = () => {
         </FlowItem>
         <Arrow variants={arrowVariants}><IconArrowRight size={32} stroke={2.2} color="var(--secondary-color)" /></Arrow>
         <FlowItem variants={itemVariants} whileHover={{ scale: 1.08 }}>
-          <IconPlug size={48} stroke={2.2} color="var(--secondary-color)" />
+          <img src="/images/equipment.svg" alt="Equipment" style={{ width: 48, height: 48, border: '2px solid red', background: 'white' }} />
           <FlowText>Produces electricity to directly power equipment</FlowText>
         </FlowItem>
         {/* BESS Branch */}

@@ -122,9 +122,9 @@ const ProductFeatures = styled.ul`
       content: '→';
       position: absolute;
       left: 0;
-      color: var(--secondary-color);
+    color: var(--secondary-color);
       font-weight: bold;
-    }
+  }
     &:last-child { margin-bottom: 0; }
   }
 `;
@@ -135,7 +135,7 @@ const SpecsTable = styled.div`
     font-size: 1.1rem;
     margin-bottom: 0.7rem;
     color: var(--secondary-color);
-  }
+    }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -167,52 +167,52 @@ const CTAButton = styled.a`
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   }
 `;
-
-const products = [
-  {
-    title: "50kW Air Truck Unit",
-    description: "Our compact and mobile power solution designed for field deployments, emergency response, and remote operation. The 50kW Air Truck Unit combines power generation with cold air output in a transportable package.",
+  
+  const products = [
+    {
+      title: "50kW Air Truck Unit",
+      description: "Our compact and mobile power solution designed for field deployments, emergency response, and remote operation. The 50kW Air Truck Unit combines power generation with cold air output in a transportable package.",
     image: "/images/50kw-airtruck.png",
-    features: [
+      features: [
       "Mobile Design: Mounted on a truck chassis for rapid deployment to any location.",
       "Dual Output: Generates both electricity and cold air simultaneously.",
       "Integrated BESS: Built-in battery storage for consistent power delivery.",
       "Field Ready: Ruggedized for harsh environments and challenging conditions."
-    ],
-    specs: [
-      { name: "Power Output", value: "50 kW continuous" },
-      { name: "Cold Air Temperature", value: "-20°C to -40°C" },
-      { name: "BESS Capacity", value: "100 kWh" },
-      { name: "Runtime", value: "24+ hours on full charge" },
-      { name: "Recharge Time", value: "7-10 minutes" },
-      { name: "Noise Level", value: "< 65 dB at 7 meters" },
-      { name: "Dimensions", value: "Standard truck bed (6.5 ft)" },
-      { name: "Weight", value: "Approximately 2,500 kg" }
-    ]
-  },
-  {
-    title: "1.5MW BESS System",
-    description: "Our utility-scale energy solution for microgrids, communities, and industrial applications. The 1.5MW system delivers substantial power with integrated storage, dramatically reducing land use compared to traditional clean energy sources.",
+      ],
+      specs: [
+        { name: "Power Output", value: "50 kW continuous" },
+        { name: "Cold Air Temperature", value: "-20°C to -40°C" },
+        { name: "BESS Capacity", value: "100 kWh" },
+        { name: "Runtime", value: "24+ hours on full charge" },
+        { name: "Recharge Time", value: "7-10 minutes" },
+        { name: "Noise Level", value: "< 65 dB at 7 meters" },
+        { name: "Dimensions", value: "Standard truck bed (6.5 ft)" },
+        { name: "Weight", value: "Approximately 2,500 kg" }
+      ]
+    },
+    {
+      title: "1.5MW BESS System",
+      description: "Our utility-scale energy solution for microgrids, communities, and industrial applications. The 1.5MW system delivers substantial power with integrated storage, dramatically reducing land use compared to traditional clean energy sources.",
     image: "/images/1.5mw-bess1.png",
-    features: [
+      features: [
       "High Capacity: Powers up to 450 homes with clean, sustainable energy.",
       "Compact Footprint: Minimal land use compared to equivalent solar or wind installations.",
       "Scalable Design: Modular construction allows for expansion as needs grow.",
       "Grid Integration: Seamless connection to existing infrastructure with stabilization features."
-    ],
-    specs: [
-      { name: "Power Output", value: "1.5 MW continuous" },
-      { name: "BESS Capacity", value: "3 MWh" },
-      { name: "Cooling Capacity", value: "500 tons (1,760 kW)" },
-      { name: "System Footprint", value: "40 ft x 60 ft" },
-      { name: "Installation Time", value: "2-3 weeks" },
-      { name: "Expected Lifespan", value: "20+ years" },
-      { name: "Maintenance Interval", value: "Quarterly inspection" },
-      { name: "Grid Compatibility", value: "Standard connections with island mode capability" }
-    ]
-  }
-];
-
+      ],
+      specs: [
+        { name: "Power Output", value: "1.5 MW continuous" },
+        { name: "BESS Capacity", value: "3 MWh" },
+        { name: "Cooling Capacity", value: "500 tons (1,760 kW)" },
+        { name: "System Footprint", value: "40 ft x 60 ft" },
+        { name: "Installation Time", value: "2-3 weeks" },
+        { name: "Expected Lifespan", value: "20+ years" },
+        { name: "Maintenance Interval", value: "Quarterly inspection" },
+        { name: "Grid Compatibility", value: "Standard connections with island mode capability" }
+      ]
+    }
+  ];
+  
 const ProductsSection = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   const variants = {
@@ -244,37 +244,37 @@ const ProductsSection = () => {
               key={product.title}
               reverse={idx % 2 === 1}
               variants={variants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-            >
-              <ProductImage>
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <ProductImage>
                 <img src={product.image} alt={product.title} />
-              </ProductImage>
-              <ProductDetails>
+          </ProductImage>
+          <ProductDetails>
                 <ProductTitle>{product.title}</ProductTitle>
                 <ProductDescription>{product.description}</ProductDescription>
-                <ProductFeatures>
+            <ProductFeatures>
                   {product.features.map((feature, i) => (
                     <li key={i}>{feature}</li>
-                  ))}
-                </ProductFeatures>
-                <SpecsTable>
-                  <h4>Technical Specifications</h4>
-                  <table>
-                    <tbody>
+              ))}
+            </ProductFeatures>
+              <SpecsTable>
+                <h4>Technical Specifications</h4>
+                <table>
+                  <tbody>
                       {product.specs.map((spec, i) => (
                         <tr key={i}>
-                          <td>{spec.name}</td>
-                          <td>{spec.value}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </SpecsTable>
-                <ProductCTA>
-                  <CTAButton href="/contact">Request Product Information</CTAButton>
-                </ProductCTA>
-              </ProductDetails>
+                        <td>{spec.name}</td>
+                        <td>{spec.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </SpecsTable>
+              <ProductCTA>
+                <CTAButton href="/contact">Request Product Information</CTAButton>
+              </ProductCTA>
+          </ProductDetails>
             </ProductRow>
           ))}
         </ProductsList>
